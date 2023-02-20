@@ -23,7 +23,7 @@ class Sprite {
 		c.drawImage(
 			this.image,
 			this.framesCurrent * (this.image.width / this.framesMax),
-			this.offset.y,
+			0,
 			this.image.width / this.framesMax,
 			this.image.height,
 			this.position.x - this.offset.x,
@@ -58,18 +58,20 @@ class Fighter extends Sprite {
 		            imageSrc,
 		            scale = 1,
 		            framesMax = 1,
+					framesHold = 10,
 		            offset = {x: 0, y: 0},
 		            sprites,
 		            attackBox = {
 			            offset: {},
-			            width: null,
-			            height: null,
+			            width: undefined,
+			            height: undefined,
 		            }
 	            }) {
 
 		super({
 			position,
 			imageSrc,
+			framesHold,
 			scale,
 			framesMax,
 			offset,
@@ -92,7 +94,7 @@ class Fighter extends Sprite {
 		this.health = health;
 		this.framesCurrent = 0;
 		this.framesElapsed = 0;
-		this.framesHold = 10;
+		this.framesHold = framesHold;
 		this.sprites = sprites;
 		this.dead = false;
 
@@ -111,12 +113,13 @@ class Fighter extends Sprite {
 
 		this.animateFrames();
 
-		// дебаг области атаки
-		// c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
-
-
 		this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
 		this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
+
+
+		// дебаг области атаки
+		c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
+
 		this.position.x += this.velocity.x;
 		this.position.y += this.velocity.y;
 
@@ -129,20 +132,18 @@ class Fighter extends Sprite {
 
 	attack() {
 		this.isAttacking = true;
-		this.switchSprites('attack1');
+		this.switchSprite('attack1');
 	}
 
 	takeHit() {
-		this.health -= 20;
+		this.health -= 20
 
 		if (this.health <= 0) {
-			this.switchSprites('death');
-		} else {
-			this.switchSprites('takeHit');
-		}
+		  this.switchSprite('death')
+		} else this.switchSprite('takeHit')
 	}
 
-	switchSprites(spriteName) {
+	switchSprite(spriteName) {
 		// when death
 		if (this.image === this.sprites.death.image) {
 			if (this.framesCurrent === this.sprites.death.framesMax - 1) {
