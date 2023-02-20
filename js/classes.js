@@ -118,7 +118,7 @@ class Fighter extends Sprite {
 
 
 		// дебаг области атаки
-		c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
+		// c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
 
 		this.position.x += this.velocity.x;
 		this.position.y += this.velocity.y;

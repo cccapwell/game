@@ -13,7 +13,7 @@ const background = new Sprite({
 		x: 0,
 		y: 0,
 	},
-	imageSrc: './images/background.png',
+	imageSrc: './images/bg.png',
 });
 
 const shop = new Sprite({
@@ -37,7 +37,7 @@ const player = new Fighter({
 	},
 	imageSrc: './images/samuraiMack/css_sprites_kano.png',
 	framesMax: 9,
-	framesHold: 9,
+	framesHold: 12,
 	scale: 1.5,
 	offset: {
 		x: -150,
@@ -172,10 +172,10 @@ function animate() {
 	c.fillRect(0, 0, canvas.width, canvas.height);
 
 	background.update();
-	shop.update();
+	// shop.update();
 
 	c.fillStyle = 'rgba(255,255,255, .15)';
-	c.fillRect(0, 0, canvas.width, canvas.height - 97);
+	c.fillRect(0, 0, canvas.width, canvas.height - 165);
 
 	player.update();
 	enemy.update();
