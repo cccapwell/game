@@ -7,6 +7,7 @@ canvas.height = 576;
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
+let gameOver = false;
 
 const background = new Sprite({
 	position: {
@@ -35,7 +36,7 @@ const player = new Fighter({
 		x: 0,
 		y: 0,
 	},
-	imageSrc: './images/samuraiMack/css_sprites_kano.png',
+	imageSrc: './images/samuraiMack/idle.png',
 	framesMax: 9,
 	framesHold: 12,
 	scale: 1.5,
@@ -49,36 +50,40 @@ const player = new Fighter({
 	},
 	sprites: {
 		idle: {
-			imageSrc: './images/samuraiMack/css_sprites_kano.png',
+			imageSrc: './images/zano/idle.png',
 			framesMax: 9,
 		},
 		run: {
-			imageSrc: './images/samuraiMack/css_sprites_kano_walk.png',
+			imageSrc: './images/zano/walk.png',
 			framesMax: 9,
 		},
 		jump: {
-			imageSrc: './images/samuraiMack/css_sprites_kano_jump.png',
+			imageSrc: './images/zano/jump.png',
 			framesMax: 9,
 		},
 		attack1: {
-			imageSrc: './images/samuraiMack/Attack1.png',
-			framesMax: 6,
+			imageSrc: './images/zano/attack1.png',
+			framesMax: 10,
 		},
-		attack2: {
-			imageSrc: './images/samuraiMack/Attack2.png',
-			framesMax: 6,
+		victory: {
+			imageSrc: './images/zano/victory.png',
+			framesMax: 10,
 		},
+		// attack2: {
+		// 	imageSrc: './images/zano/victory.png',
+		// 	framesMax: 10,
+		// },
 		death: {
-			imageSrc: './images/samuraiMack/Death.png',
-			framesMax: 6,
+			imageSrc: './images/zano/death.png',
+			framesMax: 7,
 		},
 		fall: {
-			imageSrc: './images/samuraiMack/css_sprites_kano_jump.png',
+			imageSrc: './images/zano/jump.png',
 			framesMax: 9,
 		},
 		takeHit: {
-			imageSrc: './images/samuraiMack/TackHitWhite.png',
-			framesMax: 4,
+			imageSrc: './images/zano/takeHit.png',
+			framesMax: 6,
 		},
 	},
 	attackBox: {
@@ -89,6 +94,7 @@ const player = new Fighter({
 		width: 200,
 		height: 50,
 	},
+	gapAfterHit: -50,
 });
 
 const enemy = new Fighter({
@@ -135,6 +141,10 @@ const enemy = new Fighter({
 			framesMax: 4,
 		},
 		death: {
+			imageSrc: './images/kenji/Death.png',
+			framesMax: 7,
+		},
+		victory: {
 			imageSrc: './images/kenji/Death.png',
 			framesMax: 7,
 		},

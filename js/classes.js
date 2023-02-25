@@ -53,7 +53,6 @@ class Fighter extends Sprite {
 	constructor({
 		            position,
 		            velocity,
-		            color = 'red',
 		            health = 100,
 		            imageSrc,
 		            scale = 1,
@@ -70,6 +69,7 @@ class Fighter extends Sprite {
 						left: 0,
 						right: 0,
 					},
+		            gapAfterHit = 50,
 	            }) {
 
 		super({
@@ -96,6 +96,7 @@ class Fighter extends Sprite {
 		this.limits = limits;
 		this.isAttacking;
 		this.health = health;
+		this.gapAfterHit = gapAfterHit;
 		this.framesCurrent = 0;
 		this.framesElapsed = 0;
 		this.framesHold = framesHold;
@@ -115,6 +116,10 @@ class Fighter extends Sprite {
 			return
 		}
 
+		if (gameOver && this.health > 0) {
+			this.switchSprite('win');
+		}
+
 		this.animateFrames();
 
 		this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
@@ -123,8 +128,6 @@ class Fighter extends Sprite {
 
 		// дебаг области атаки
 		c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
-
-		console.log(this.position.x, 'left position');
 
 		this.position.x += this.velocity.x;
 
@@ -146,14 +149,22 @@ class Fighter extends Sprite {
 	}
 
 	takeHit() {
-		this.health -= 20
+		this.health -= 20;
 
 		if (this.health <= 0) {
-		  this.switchSprite('death')
+			gameOver = true;
+			this.switchSprite('death');
 		} else this.switchSprite('takeHit')
 	}
 
 	switchSprite(spriteName) {
+		// when win
+		if (this.image === this.sprites.victory.image) {
+			if (this.framesCurrent === this.sprites.victory.framesMax - 1) {
+				this.dead = true;
+			}
+			return;
+		}
 		// when death
 		if (this.image === this.sprites.death.image) {
 			if (this.framesCurrent === this.sprites.death.framesMax - 1) {
@@ -223,6 +234,13 @@ class Fighter extends Sprite {
 				if (this.image !== this.sprites.death.image) {
 					this.image = this.sprites.death.image;
 					this.framesMax = this.sprites.death.framesMax;
+					this.framesCurrent = 0;
+				}
+			break;
+			case 'win':
+				if (this.image !== this.sprites.victory.image) {
+					this.image = this.sprites.victory.image;
+					this.framesMax = this.sprites.victory.framesMax;
 					this.framesCurrent = 0;
 				}
 			break;
