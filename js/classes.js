@@ -65,7 +65,11 @@ class Fighter extends Sprite {
 			            offset: {},
 			            width: undefined,
 			            height: undefined,
-		            }
+		            },
+					limits = {
+						left: 0,
+						right: 0,
+					},
 	            }) {
 
 		super({
@@ -89,7 +93,7 @@ class Fighter extends Sprite {
 			width: attackBox.width,
 			height: attackBox.height,
 		};
-		this.color = color;
+		this.limits = limits;
 		this.isAttacking;
 		this.health = health;
 		this.framesCurrent = 0;
@@ -118,9 +122,15 @@ class Fighter extends Sprite {
 
 
 		// дебаг области атаки
-		// c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
+		c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
+
+		console.log(this.position.x, 'left position');
 
 		this.position.x += this.velocity.x;
+
+		if (this.position.x < this.limits.left) this.position.x = this.limits.left;
+		if (this.position.x > this.limits.right) this.position.x = this.limits.right;
+
 		this.position.y += this.velocity.y;
 
 		// gravity function

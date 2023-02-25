@@ -41,7 +41,11 @@ const player = new Fighter({
 	scale: 1.5,
 	offset: {
 		x: -150,
-		y: 68,
+		y: 20,
+	},
+	limits: {
+		left: -150,
+		right: 760,
 	},
 	sprites: {
 		idle: {
@@ -95,6 +99,11 @@ const enemy = new Fighter({
 	velocity: {
 		x: 0,
 		y: 0,
+	},
+
+	limits: {
+		left: -80,
+		right: 820,
 	},
 	color: 'blue',
 	imageSrc: './images/kenji/Idle.png',
