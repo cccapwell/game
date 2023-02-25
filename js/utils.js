@@ -13,8 +13,8 @@ function decreaseTimer() {
 			clearInterval(intervalId);
 
 			if (player.health === enemy.health) setResult('Tie');
-			if (player.health > enemy.health) setResult('Player 1 win');
-			if (enemy.health > player.health) setResult('Player 2 win');
+			if (player.health > enemy.health) setResult(`${player.name} wins`);
+			if (enemy.health > player.health) setResult(`${enemy.name} wins`);
 		}
 	}
 }

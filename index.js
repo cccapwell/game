@@ -28,6 +28,7 @@ const shop = new Sprite({
 });
 
 const player = new Fighter({
+	name: 'Kanfort',
 	position: {
 		x: 0,
 		y: 0,
@@ -50,39 +51,39 @@ const player = new Fighter({
 	},
 	sprites: {
 		idle: {
-			imageSrc: './images/zano/idle.png',
+			imageSrc: './images/kanfort/idle.png',
 			framesMax: 9,
 		},
 		run: {
-			imageSrc: './images/zano/walk.png',
+			imageSrc: './images/kanfort/walk.png',
 			framesMax: 9,
 		},
 		jump: {
-			imageSrc: './images/zano/jump.png',
+			imageSrc: './images/kanfort/jump.png',
 			framesMax: 9,
 		},
 		attack1: {
-			imageSrc: './images/zano/attack1.png',
+			imageSrc: './images/kanfort/attack1.png',
 			framesMax: 10,
 		},
 		victory: {
-			imageSrc: './images/zano/victory.png',
+			imageSrc: './images/kanfort/victory.png',
 			framesMax: 10,
 		},
 		// attack2: {
-		// 	imageSrc: './images/zano/victory.png',
+		// 	imageSrc: './images/kanfort/victory.png',
 		// 	framesMax: 10,
 		// },
 		death: {
-			imageSrc: './images/zano/death.png',
+			imageSrc: './images/kanfort/death.png',
 			framesMax: 7,
 		},
 		fall: {
-			imageSrc: './images/zano/jump.png',
+			imageSrc: './images/kanfort/jump.png',
 			framesMax: 9,
 		},
 		takeHit: {
-			imageSrc: './images/zano/takeHit.png',
+			imageSrc: './images/kanfort/takeHit.png',
 			framesMax: 6,
 		},
 	},
@@ -98,6 +99,7 @@ const player = new Fighter({
 });
 
 const enemy = new Fighter({
+	name: 'Sindelchan',
 	position: {
 		x: 600,
 		y: 100,
@@ -108,53 +110,53 @@ const enemy = new Fighter({
 	},
 
 	limits: {
-		left: -80,
-		right: 820,
+		left: -140,
+		right: 770,
 	},
 	color: 'blue',
-	imageSrc: './images/kenji/Idle.png',
-	framesMax: 4,
-	scale: 2.86,
+	imageSrc: './images/sindel/idle.png',
+	framesMax: 9,
+	scale: 1.6,
 	offset: {
-		x: 150,
-		y: 212,
+		x: -140,
+		y: 40,
 	},
 	sprites: {
 		idle: {
-			imageSrc: './images/kenji/Idle.png',
-			framesMax: 4,
+			imageSrc: './images/sindel/idle.png',
+			framesMax: 9,
 		},
 		run: {
-			imageSrc: './images/kenji/Run.png',
-			framesMax: 8,
+			imageSrc: './images/sindel/walk.png',
+			framesMax: 9,
 		},
 		jump: {
-			imageSrc: './images/kenji/Jump.png',
-			framesMax: 2,
+			imageSrc: './images/sindel/jump.png',
+			framesMax: 3,
 		},
 		attack1: {
-			imageSrc: './images/kenji/Attack1.png',
-			framesMax: 4,
-		},
-		attack2: {
-			imageSrc: './images/kenji/Attack2.png',
-			framesMax: 4,
-		},
-		death: {
-			imageSrc: './images/kenji/Death.png',
+			imageSrc: './images/sindel/attack1.png',
 			framesMax: 7,
 		},
+		// attack2: {
+		// 	imageSrc: './images/sindel/idle.png',
+		// 	framesMax: 9,
+		// },
+		death: {
+			imageSrc: './images/sindel/death.png',
+			framesMax: 8,
+		},
 		victory: {
-			imageSrc: './images/kenji/Death.png',
+			imageSrc: './images/sindel/victory.png',
 			framesMax: 7,
 		},
 		fall: {
-			imageSrc: './images/kenji/Fall.png',
-			framesMax: 2,
+			imageSrc: './images/sindel/jump.png',
+			framesMax: 3,
 		},
 		takeHit: {
-			imageSrc: './images/kenji/TakeHit.png',
-			framesMax: 3,
+			imageSrc: './images/sindel/takeHit.png',
+			framesMax: 7,
 		},
 	},
 	attackBox: {
@@ -274,11 +276,11 @@ function animate() {
 
 	// fight results
 	if (player.health <= 0) {
-		setResult('Player 2 wins');
+		setResult(`${enemy.name} wins`);
 		clearInterval(intervalId);
 	}
 	if (enemy.health <= 0) {
-		setResult('Player 1 wins');
+		setResult(`${player.name} wins`);
 		clearInterval(intervalId);
 	}
 }

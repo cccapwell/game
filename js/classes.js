@@ -70,6 +70,7 @@ class Fighter extends Sprite {
 						right: 0,
 					},
 		            gapAfterHit = 50,
+					name = 'Player',
 	            }) {
 
 		super({
@@ -79,7 +80,9 @@ class Fighter extends Sprite {
 			scale,
 			framesMax,
 			offset,
+			name,
 		});
+		this.name = name;
 		this.velocity = velocity;
 		this.width = 50;
 		this.height = 150;
