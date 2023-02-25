@@ -8,6 +8,10 @@
     font-family: 'Press Start 2P', sans-serif;
 }
 
+.board__body {
+    margin-bottom: 40px;
+}
+
 .board__result {
     position: absolute;
     top: 50%;
