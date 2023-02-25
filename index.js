@@ -292,14 +292,17 @@ window.addEventListener('keydown', (event) => {
 	if (!player.dead) {
     switch (event.key) {
       case 'd':
+      case 'в':
         keys.d.pressed = true
         player.lastKey = 'd'
         break
       case 'a':
+      case 'ф':
         keys.a.pressed = true
         player.lastKey = 'a'
         break
       case 'w':
+      case 'ц':
         player.velocity.y = -20
         break
       case ' ':
@@ -333,9 +336,11 @@ window.addEventListener('keydown', (event) => {
 window.addEventListener('keyup', (event) => {
 	switch (event.key) {
 		case 'd':
+		case 'в':
 			keys.d.pressed = false;
 			break;
 		case 'a':
+		case 'ф':
 			keys.a.pressed = false;
 			break;
 	}
