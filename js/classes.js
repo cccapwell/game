@@ -130,7 +130,7 @@ class Fighter extends Sprite {
 
 
 		// дебаг области атаки
-		c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
+		// c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
 
 		this.position.x += this.velocity.x;
 
@@ -153,11 +153,12 @@ class Fighter extends Sprite {
 
 	takeHit() {
 		this.health -= 20;
+		this.position.x += this.gapAfterHit;
 
 		if (this.health <= 0) {
 			gameOver = true;
 			this.switchSprite('death');
-		} else this.switchSprite('takeHit')
+		} else this.switchSprite('takeHit');
 	}
 
 	switchSprite(spriteName) {
