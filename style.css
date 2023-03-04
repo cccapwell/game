@@ -59,7 +59,7 @@
 
 .board__result {
     position: absolute;
-    top: 50%;
+    top: 110px;
     left: 50%;
     color: white;
     font-size: 28px;
