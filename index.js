@@ -37,7 +37,7 @@ const player = new Fighter({
 		x: 0,
 		y: 0,
 	},
-	imageSrc: './images/samuraiMack/idle.png',
+	imageSrc: './images/kanfort/idle.png',
 	framesMax: 9,
 	framesHold: 12,
 	scale: 1.5,
