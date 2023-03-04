@@ -14,8 +14,10 @@
 
 .board__info {
     padding: 40px;
+    user-select: none;
 }
 .board__keyboard {
+    user-select: none;
     padding: 40px;
     display: grid;
     grid-template-columns: 100px 160px 100px;
