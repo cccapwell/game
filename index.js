@@ -303,7 +303,7 @@ window.addEventListener('keydown', (event) => {
         break
       case 'w':
       case 'ц':
-        player.velocity.y = -20
+        if (player.velocity.y === 0) player.velocity.y = -20
         break
       case ' ':
         player.attack()
@@ -323,7 +323,7 @@ window.addEventListener('keydown', (event) => {
         enemy.lastKey = 'ArrowLeft'
         break
       case 'ArrowUp':
-        enemy.velocity.y = -20
+	      if (enemy.velocity.y === 0) enemy.velocity.y = -20
         break
       case 'ArrowDown':
         enemy.attack()
