@@ -13,9 +13,9 @@
 }
 
 .board__info {
-    padding: 40px;
+    padding: 20px;
     user-select: none;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .board__keyboard {
     display: flex;
@@ -23,14 +23,14 @@
 }
 .board__keyboard-player {
     user-select: none;
-    padding: 40px;
+    padding: 20px;
     display: grid;
     grid-template-columns: 100px 160px 100px;
     grid-template-rows: auto;
     grid-template-areas:
         ". up ."
         "left attack right";
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .board__keyboard-key {
