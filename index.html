@@ -36,6 +36,13 @@
         </div>
 
         <div class="board__info">
+            <div class="board__info-item">влево - a, <span class="leftArrow">↑</span></div>
+            <div class="board__info-item">вправо - d, <span class="rightArrow">↑</span></div>
+            <div class="board__info-item">прыжок - w, ↑</div>
+            <div class="board__info-item">атака - space, ↓</div>
+        </div>
+
+        <div class="board__info">
             keyboard for touch devices
         </div>
 
@@ -52,13 +59,13 @@
                      ontouchstart="handler('keydown', 'a')"
                      ontouchend="handler('keyup', 'a')"
                 >
-                    ←
+                    <span class="leftArrow">↑</span>
                 </div>
                 <div class="board__keyboard-key right"
                      ontouchstart="handler('keydown', 'd')"
                      ontouchend="handler('keyup', 'd')"
                 >
-                    →
+                    <span class="rightArrow">↑</span>
                 </div>
                 <div class="board__keyboard-key attack"
                      ontouchstart="handler('keydown', ' ')"
@@ -79,13 +86,13 @@
                      ontouchstart="handler('keydown', 'ArrowLeft')"
                      ontouchend="handler('keyup', 'ArrowLeft')"
                 >
-                    ←
+                    <span class="leftArrow">↑</span>
                 </div>
                 <div class="board__keyboard-key right"
                      ontouchstart="handler('keydown', 'ArrowRight')"
                      ontouchend="handler('keyup', 'ArrowRight')"
                 >
-                    →
+                    <span class="rightArrow">↑</span>
                 </div>
                 <div class="board__keyboard-key attack"
                      ontouchstart="handler('keydown', 'ArrowDown')"
@@ -94,13 +101,6 @@
                     attack
                 </div>
             </div>
-        </div>
-
-        <div class="board__info">
-            <div class="board__info-item">влево - a, ←</div>
-            <div class="board__info-item">вправо - d, →</div>
-            <div class="board__info-item">прыжок - w, ↑</div>
-            <div class="board__info-item">атака - space, ↓</div>
         </div>
     </div>
 

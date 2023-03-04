@@ -1,6 +1,14 @@
 * {
     box-sizing: border-box;
 }
+.leftArrow {
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+.rightArrow {
+    display: inline-block;
+    transform: rotate(90deg);
+}
 .board {
     display: inline-block;
     position: relative;
@@ -13,6 +21,8 @@
 }
 
 .board__info {
+    display: flex;
+    gap: 40px;
     padding: 20px;
     user-select: none;
     margin-bottom: 20px;
