@@ -288,6 +288,7 @@ function animate() {
 animate();
 
 window.addEventListener('keydown', (event) => {
+	console.log(event)
 	// player keyboard
 	if (!player.dead) {
     switch (event.key) {

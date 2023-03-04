@@ -12,6 +12,40 @@
     margin-bottom: 40px;
 }
 
+.board__keyboard {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". up ."
+        "left attack right";
+    margin-bottom: 40px;
+}
+
+.board__keyboard-key {
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.board__keyboard-key.up {
+    grid-area: up;
+}
+
+.board__keyboard-key.left {
+    grid-area: left;
+}
+
+.board__keyboard-key.right {
+    grid-area: right;
+}
+
+.board__keyboard-key.attack {
+    grid-area: attack;
+}
+
 .board__result {
     position: absolute;
     top: 50%;

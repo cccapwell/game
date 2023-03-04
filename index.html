@@ -10,6 +10,12 @@
 </head>
 <body>
 
+<script>
+    function handler(type, key) {
+	    dispatchEvent(new KeyboardEvent(type, {key}))
+    }
+</script>
+
     <div class="board">
         <div class="board__head">
             <div class="health-bar">
@@ -30,10 +36,37 @@
         </div>
 
         <div class="board__keyboard">
-            <div class="board__keyboard-item">влево - a, ←</div>
-            <div class="board__keyboard-item">вправо - d, →</div>
-            <div class="board__keyboard-item">прыжок - w, ↑</div>
-            <div class="board__keyboard-item">атака - space, ↓</div>
+            <div
+                class="board__keyboard-key up"
+                ontouchstart="handler('keydown', 'w')"
+                ontouchend="handler('keyup', 'w')"
+            >
+                ↑
+            </div>
+            <div class="board__keyboard-key left"
+                 ontouchstart="handler('keydown', 'a')"
+                 ontouchend="handler('keyup', 'a')"
+            >
+                ←
+            </div>
+            <div class="board__keyboard-key right"
+                 ontouchstart="handler('keydown', 'd')"
+                 ontouchend="handler('keyup', 'd')"
+            >
+                →
+            </div>
+            <div class="board__keyboard-key attack"
+                 ontouchstart="handler('keydown', ' ')"
+                 ontouchend="handler('keyup', ' ')"
+            >
+                attack
+            </div>
+        </div>
+        <div class="board__info">
+            <div class="board__info-item">влево - a, ←</div>
+            <div class="board__info-item">вправо - d, →</div>
+            <div class="board__info-item">прыжок - w, ↑</div>
+            <div class="board__info-item">атака - space, ↓</div>
         </div>
     </div>
 
