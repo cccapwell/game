@@ -44,32 +44,62 @@
         </div>
 
         <div class="board__keyboard">
-            <div
-                class="board__keyboard-key up"
-                ontouchstart="handler('keydown', 'w')"
-                ontouchend="handler('keyup', 'w')"
-            >
-                ↑
+            <div class="board__keyboard-player">
+                <div
+                        class="board__keyboard-key up"
+                        ontouchstart="handler('keydown', 'w')"
+                        ontouchend="handler('keyup', 'w')"
+                >
+                    ↑
+                </div>
+                <div class="board__keyboard-key left"
+                     ontouchstart="handler('keydown', 'a')"
+                     ontouchend="handler('keyup', 'a')"
+                >
+                    ←
+                </div>
+                <div class="board__keyboard-key right"
+                     ontouchstart="handler('keydown', 'd')"
+                     ontouchend="handler('keyup', 'd')"
+                >
+                    →
+                </div>
+                <div class="board__keyboard-key attack"
+                     ontouchstart="handler('keydown', ' ')"
+                     ontouchend="handler('keyup', ' ')"
+                >
+                    attack
+                </div>
             </div>
-            <div class="board__keyboard-key left"
-                 ontouchstart="handler('keydown', 'a')"
-                 ontouchend="handler('keyup', 'a')"
-            >
-                ←
-            </div>
-            <div class="board__keyboard-key right"
-                 ontouchstart="handler('keydown', 'd')"
-                 ontouchend="handler('keyup', 'd')"
-            >
-                →
-            </div>
-            <div class="board__keyboard-key attack"
-                 ontouchstart="handler('keydown', ' ')"
-                 ontouchend="handler('keyup', ' ')"
-            >
-                attack
+            <div class="board__keyboard-player">
+                <div
+                        class="board__keyboard-key up"
+                        ontouchstart="handler('keydown', 'ArrowUp')"
+                        ontouchend="handler('keyup', 'ArrowUp')"
+                >
+                    ↑
+                </div>
+                <div class="board__keyboard-key left"
+                     ontouchstart="handler('keydown', 'ArrowLeft')"
+                     ontouchend="handler('keyup', 'ArrowLeft')"
+                >
+                    ←
+                </div>
+                <div class="board__keyboard-key right"
+                     ontouchstart="handler('keydown', 'ArrowRight')"
+                     ontouchend="handler('keyup', 'ArrowRight')"
+                >
+                    →
+                </div>
+                <div class="board__keyboard-key attack"
+                     ontouchstart="handler('keydown', 'ArrowDown')"
+                     ontouchend="handler('keyup', 'ArrowDown')"
+                >
+                    attack
+                </div>
             </div>
         </div>
+
         <div class="board__info">
             <div class="board__info-item">влево - a, ←</div>
             <div class="board__info-item">вправо - d, →</div>

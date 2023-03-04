@@ -18,6 +18,10 @@
     margin-bottom: 40px;
 }
 .board__keyboard {
+    display: flex;
+    justify-content: space-between;
+}
+.board__keyboard-player {
     user-select: none;
     padding: 40px;
     display: grid;
