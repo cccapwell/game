@@ -15,6 +15,7 @@
 .board__info {
     padding: 40px;
     user-select: none;
+    margin-bottom: 40px;
 }
 .board__keyboard {
     user-select: none;
