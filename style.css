@@ -12,7 +12,11 @@
     margin-bottom: 40px;
 }
 
+.board__info {
+    padding: 40px;
+}
 .board__keyboard {
+    padding: 40px;
     display: grid;
     grid-template-columns: 100px 160px 100px;
     grid-template-rows: auto;
